@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Our App
     'filter_app',
+    
     # Third Party app
     'rest_framework',
     'django_filters'

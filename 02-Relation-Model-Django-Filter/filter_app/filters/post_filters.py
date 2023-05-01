@@ -13,7 +13,7 @@ class MyMultipleChoiceFilter(filters.ModelMultipleChoiceFilter):
         return qs
 
 class PostFilter(filters.FilterSet):
-    title = filters.NumberFilter(field_name="title")
+    title = filters.CharFilter(field_name="title", lookup_expr="icontain")
     content = filters.NumberFilter(field_name="content")
     user = filters.ModelChoiceFilter(queryset = UserModel.objects.all())
     user_names = filters.ModelMultipleChoiceFilter(field_name='user__id',to_field_name='id',queryset = UserModel.objects.all())
